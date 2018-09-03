@@ -7,18 +7,34 @@ This proxy is easy to use (1 command to launch) and nothing is installed in your
 ## Requirement
 
 - Docker (1.10.0+)
-- Docker Compose (1.6.0+)
-
-I only checked this program on Docker for Mac.
-Maybe you have to modify some code if you run this on a Linux/Windows machine.
 
 ## Usage
 
-### Launch
+### Mac OSX
 
 ```bash
-$ ./run.sh YOUR_APP_PORT
+docker run -it \
+  -e "HOST_IP=`ipconfig getifaddr en0`" \
+  -e "PORT=8000" \
+  -p 443:443 \
+  --rm \
+  esplo/docker-local-ssl-termination-proxy
 ```
+
+### Linux
+
+```bash
+docker run -it \
+  -e "HOST_IP=`hostname -I | awk '{print $1}'`" \
+  -e "PORT=8000" \
+  -p 443:443 \
+  --rm \
+  esplo/docker-local-ssl-termination-proxy
+```
+
+### Other platform
+
+Only you have to do is to change the command for 'HOST_IP'.
 
 ### Test connection
 
