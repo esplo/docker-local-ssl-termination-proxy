@@ -1,8 +1,8 @@
 # Docker Local SSL Termination Proxy
 
-A simple SSL Termination Proxy for localhost.
+A simple SSL Termination Proxy for accessing https://localhost.
 
-This proxy is easy to use (1 command to launch) and nothing is installed in your local machine (thanks for docker).
+This proxy is easy to use (1 command to launch) and nothing is installed on your local machine thanks to Docker.
 
 ## Requirement
 
