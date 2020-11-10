@@ -32,7 +32,6 @@ http {
       proxy_set_header Connection "upgrade";
       proxy_read_timeout 1d;
       proxy_send_timeout 1d;
-      websocket_connect_timeout 1d;
     }
   }
 }       
