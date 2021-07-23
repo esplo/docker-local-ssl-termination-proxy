@@ -42,6 +42,12 @@ Only you have to do is to change the command for 'HOST_IP'.
 $ curl -k https://localhost/
 ```
 
+## Troubleshoot
+
+### NET::ERR_CERT_INVALID in Chrome on MacOS
+
+Check [this SO post](https://stackoverflow.com/questions/58802767/no-proceed-anyway-option-on-neterr-cert-invalid-in-chrome-on-macos) to bypass this. My recommendation is to type "thisisunsafe".
+
 ## License
 
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
