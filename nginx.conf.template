@@ -9,7 +9,7 @@ http {
   access_log /dev/stdout;
 
   upstream app {
-    server ${HOST_IP}:${PORT};
+    server host.docker.internal:${PORT};
   }
 
   server {
@@ -34,5 +34,4 @@ http {
       proxy_send_timeout 1d;
     }
   }
-}       
-
+}

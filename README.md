@@ -6,7 +6,7 @@ This proxy is easy to use (1 command to launch) and nothing is installed on your
 
 ## Requirement
 
-- Docker (1.10.0+)
+- Docker (20.10.0+)
 
 ## Usage
 
@@ -14,7 +14,6 @@ This proxy is easy to use (1 command to launch) and nothing is installed on your
 
 ```bash
 docker run -it \
-  -e "HOST_IP=`ipconfig getifaddr en0`" \
   -e "PORT=8000" \
   -p 443:443 \
   --rm \
@@ -25,7 +24,7 @@ docker run -it \
 
 ```bash
 docker run -it \
-  -e "HOST_IP=`hostname -I | awk '{print $1}'`" \
+  --add-host=host.docker.internal:host-gateway
   -e "PORT=8000" \
   -p 443:443 \
   --rm \
@@ -34,7 +33,7 @@ docker run -it \
 
 ### Other platform
 
-Only you have to do is to change the command for 'HOST_IP'.
+You need to make sure that `host.docker.internal` is resolved properly inside docker containers. For majority of platforms that don't resolve it automatically (like Docker Desktop for Mac), setting `--add-host=host.docker.internal:host-gateway` is enough.
 
 ### Test connection
 
@@ -51,4 +50,3 @@ Check [this SO post](https://stackoverflow.com/questions/58802767/no-proceed-any
 ## License
 
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
-
