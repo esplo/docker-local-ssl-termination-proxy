@@ -10,6 +10,8 @@ This proxy is easy to use (1 command to launch) and nothing is installed on your
 
 ## Usage
 
+Assume that your application is running on `http://localhost:8000`, the following command makes us accept requests to `https://localhost`.
+
 ### Mac OSX
 
 ```bash
@@ -43,9 +45,9 @@ $ curl -k https://localhost/
 
 ## Troubleshoot
 
-### NET::ERR_CERT_INVALID in Chrome on MacOS
+### "Your connection is not private" in Chrome
 
-Check [this SO post](https://stackoverflow.com/questions/58802767/no-proceed-anyway-option-on-neterr-cert-invalid-in-chrome-on-macos) to bypass this. My recommendation is to type "thisisunsafe".
+Click "Advanced" button, then click "Proceed anyway".
 
 ## License
 
