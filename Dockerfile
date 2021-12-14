@@ -2,7 +2,7 @@ FROM alpine:3.15
 
 LABEL maintainer="esplo <esplo@users.noreply.github.com>"
 
-ENV NGINX_VERSION 1.13.5
+ENV NGINX_VERSION 1.20.2
 
 RUN apk update \
     && apk upgrade \
