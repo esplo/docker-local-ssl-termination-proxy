@@ -43,6 +43,29 @@ You need to make sure that `host.docker.internal` is resolved properly inside do
 $ curl -k https://localhost/
 ```
 
+### Locally-trusted development certificates
+
+The container can be configured to use custom certificates with the `SSL_CERT` and `SSL_KEY` environment variables. You can use [mkcert](https://github.com/FiloSottile/mkcert) to generate locally-trusted development certificates:
+
+```bash
+$ mkdir -p ssl
+$ mkcert -install
+$ mkcert --cert-file ssl/localhost.pem --key-file ssl/localhost.key localhost 127.0.0.1 ::1
+```
+
+and mount them to the container using [bind mounts](https://docs.docker.com/storage/bind-mounts/):
+
+```bash
+$ docker run -it \
+  -e 'PORT=8000' \
+  -e 'SSL_CERT=localhost.pem' \
+  -e 'SSL_KEY=localhost.key' \
+  -p 443:443 \
+  -v "$(pwd)"/ssl:/etc/nginx/ssl/ \
+  --rm \
+  esplo/docker-local-ssl-termination-proxy
+```
+
 ## Troubleshoot
 
 ### "Your connection is not private" in Chrome

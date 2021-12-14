@@ -17,8 +17,8 @@ http {
     server_name localhost;
 
     ssl on;
-    ssl_certificate         /etc/nginx/ssl/nginx.pem;
-    ssl_certificate_key     /etc/nginx/ssl/nginx.key;
+    ssl_certificate         /etc/nginx/ssl/${SSL_CERT};
+    ssl_certificate_key     /etc/nginx/ssl/${SSL_KEY};
     location / {
       proxy_pass              http://app;
       proxy_set_header        Host    $host;
