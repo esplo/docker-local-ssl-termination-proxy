@@ -1,8 +1,8 @@
-FROM alpine:3.14
+FROM alpine:3.15
 
 LABEL maintainer="esplo <esplo@users.noreply.github.com>"
 
-ENV NGINX_VERSION 1.13.5
+ENV NGINX_VERSION 1.20.2
 
 RUN apk update \
     && apk upgrade \
@@ -26,6 +26,7 @@ COPY nginx.conf.template /etc/nginx/nginx.conf.template
 COPY entrypoint.sh .
 
 EXPOSE 443
-STOPSIGNAL SIGTERM
+
+STOPSIGNAL SIGQUIT
 
 ENTRYPOINT sh entrypoint.sh
