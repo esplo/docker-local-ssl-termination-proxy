@@ -4,6 +4,10 @@ LABEL maintainer="esplo <esplo@users.noreply.github.com>"
 
 ENV NGINX_VERSION 1.20.2
 
+ENV PORT=443
+ENV SSL_CERT=nginx.pem
+ENV SSL_KEY=nginx.key
+
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache openssl nginx gettext \
