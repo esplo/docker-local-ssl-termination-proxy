@@ -1,5 +1,7 @@
 # Docker Local SSL Termination Proxy
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/esplo/docker-local-ssl-termination-proxy.svg?style=for-the-badge)](https://hub.docker.com/r/esplo/docker-local-ssl-termination-proxy/)
+
 A simple SSL Termination Proxy for accessing https://localhost.
 
 This proxy is easy to use (1 command to launch) and nothing is installed on your local machine thanks to Docker.
